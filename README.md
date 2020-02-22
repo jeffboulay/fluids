@@ -1,44 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Component Library
 
-## Available Scripts
+This project skeleton was created to help people get started with creating their own React component library using:
+- [Rollup](https://github.com/rollup/rollup)
+- [Sass](https://sass-lang.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-In the project directory, you can run:
+It also features:
+- :white_check_mark: [Storybook](https://storybook.js.org/) to help you create and show off your components
+- :white_check_mark: [Jest](https://jestjs.io/) and [Enzyme](https://airbnb.io/enzyme/) enable testing of the components
 
-### `yarn start`
+[**Read my blog post about why and how I created this project skeleton ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development
+### Testing
+`npm run test`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Building
+`npm run build`
 
-### `yarn test`
+### Storybook
+`npm run storybook`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Publishing
+`npm run publish`
 
-### `yarn build`
+## Component Usage
+Let's say you created a public npm library called `harvey-component-library` with the `TestComponent` component created in this repository.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Usage of the component (once published to the registry and then installed into another project) will be:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+import React from "react";
+import { TestComponent } from "harvey-component-library";
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const TestApp = () => (
+    <div className="app-container>
+        <TestComponent theme="primary" />
+    </div>
+);
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+export TestApp;
+```
